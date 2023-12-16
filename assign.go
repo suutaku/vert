@@ -115,6 +115,11 @@ func assignToValue(rv reflect.Value, jv js.Value) (reflect.Value, error) {
 		return assignToMap(rv, jv)
 	case reflect.Slice:
 		return assignToSlice(rv, jv)
+	case reflect.Interface:
+		if e := rv.Elem(); e != zero {
+			return assignToInterface(rv, e, jv)
+		}
+		return zero, nil
 	default:
 		return zero, &InvalidAssignmentError{Type: jv.Type(), Kind: k}
 	}

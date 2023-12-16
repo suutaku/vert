@@ -1,12 +1,12 @@
 # vert
-[![Go Reference](https://pkg.go.dev/badge/github.com/norunners/vert.svg)](https://pkg.go.dev/github.com/norunners/vert)
-[![Test](https://github.com/norunners/vert/actions/workflows/test.yml/badge.svg)](https://github.com/norunners/vert/actions/workflows/test.yml)
+[![Go Reference](https://pkg.go.dev/badge/github.com/suutaku/vert.svg)](https://pkg.go.dev/github.com/suutaku/vert)
+[![Test](https://github.com/suutaku/vert/actions/workflows/test.yml/badge.svg)](https://github.com/suutaku/vert/actions/workflows/test.yml)
 
 Package `vert` provides WebAssembly interop between Go and JS values.
 
 ## Install
 ```bash
-GOOS=js GOARCH=wasm go get github.com/norunners/vert
+GOOS=js GOARCH=wasm go get github.com/suutaku/vert
 ```
 
 ## Examples
@@ -15,7 +15,7 @@ Below is a trivial string value interop.
 ```go
 package main
 
-import "github.com/norunners/vert"
+import "github.com/suutaku/vert"
 
 func main() {
 	v := vert.ValueOf("Hello World!")
@@ -32,7 +32,7 @@ Go structs and JS objects interop seamlessly.
 ```go
 package main
 
-import "github.com/norunners/vert"
+import "github.com/suutaku/vert"
 
 type Data struct {
 	Message string
@@ -54,7 +54,7 @@ Tagged struct fields allow defined JS field names.
 ```go
 package main
 
-import "github.com/norunners/vert"
+import "github.com/suutaku/vert"
 
 type Data struct {
 	Message string `js:"msg"`
@@ -77,7 +77,7 @@ func main() {
 ```go
 package main
 
-import "github.com/norunners/vert"
+import "github.com/suutaku/vert"
 
 type Data struct {
 	Message string
